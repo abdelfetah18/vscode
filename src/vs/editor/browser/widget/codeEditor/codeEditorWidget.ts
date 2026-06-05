@@ -406,6 +406,18 @@ export class CodeEditorWidget extends Disposable implements editorBrowser.ICodeE
 			this.applyTextDirectionDecorations();
 		}));
 
+		this._register(this.onDidChangeModelOptions(() => {
+			this.applyTextDirectionDecorations();
+		}));
+
+		this._register(this.onDidChangeModel(() => {
+			this.applyTextDirectionDecorations();
+		}));
+
+		this._register(this.onDidChangeModelContent(() => {
+			this.applyTextDirectionDecorations();
+		}));
+
 		this._codeEditorService.addCodeEditor(this);
 	}
 
